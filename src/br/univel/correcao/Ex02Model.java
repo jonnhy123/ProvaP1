@@ -5,16 +5,17 @@ import javax.swing.table.AbstractTableModel;
 public class Ex02Model extends AbstractTableModel {
 
 	private static final long serialVersionUID = 1L;
-	private int d1 = 1, d2 = 4, d3 = 8, d4 = 3, d5 = 1, d6 = 5;
+	private int d1 = 1, d2 = 2, d3 = 3, d4 = 4, d5 = 5, d6 = 6;
 	
 //Assunto: correção prova 3o semestre	
 	
 	public Ex02Model(String ra) {
 		d1 = Integer.parseInt(ra.substring(0 ,1));
-		d2 = Integer.parseInt(ra.substring(0 ,4));
-		d3 = Integer.parseInt(ra.substring(0 ,3));
-		d4 = Integer.parseInt(ra.substring(0 ,1));
-		d5 = Integer.parseInt(ra.substring(0 ,5));
+		d2 = Integer.parseInt(ra.substring(1 ,2));
+		d3 = Integer.parseInt(ra.substring(2 ,3));
+		d4 = Integer.parseInt(ra.substring(3 ,4));
+		d5 = Integer.parseInt(ra.substring(4 ,5));
+		d6 = Integer.parseInt(ra.substring(5 ,6));
 	}
 
 	@Override
@@ -31,12 +32,12 @@ public class Ex02Model extends AbstractTableModel {
 	}
 	
 	@Override
-	public int getColumnCount() {
+	public int getRowCount() {
 		return 100;
 	}
-
+	
 	@Override
-	public int getRowCount() {
+	public int getColumnCount() {
 		return 6;
 	}
 
