@@ -13,10 +13,12 @@ import javax.swing.JTable;
 import java.awt.Insets;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JScrollPane;
 
 public class Main extends JFrame {
 
 	private JPanel contentPane;
+	private JScrollPane scrollPane;
 	private JTable table;
 
 	/**
@@ -45,10 +47,10 @@ public class Main extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		GridBagLayout gbl_contentPane = new GridBagLayout();
-		gbl_contentPane.columnWidths = new int[]{0, 0};
-		gbl_contentPane.rowHeights = new int[]{0, 0, 0};
-		gbl_contentPane.columnWeights = new double[]{1.0, Double.MIN_VALUE};
-		gbl_contentPane.rowWeights = new double[]{0.0, 1.0, Double.MIN_VALUE};
+		gbl_contentPane.columnWidths = new int[]{424, 0};
+		gbl_contentPane.rowHeights = new int[]{23, 223, 0};
+		gbl_contentPane.columnWeights = new double[]{0.0, Double.MIN_VALUE};
+		gbl_contentPane.rowWeights = new double[]{0.0, 0.0, Double.MIN_VALUE};
 		contentPane.setLayout(gbl_contentPane);
 		
 		JButton btnStart = new JButton("Start");
@@ -59,18 +61,21 @@ public class Main extends JFrame {
 			}
 		});
 		GridBagConstraints gbc_btnStart = new GridBagConstraints();
-		gbc_btnStart.insets = new Insets(0, 0, 5, 0);
 		gbc_btnStart.fill = GridBagConstraints.HORIZONTAL;
+		gbc_btnStart.insets = new Insets(0, 0, 5, 0);
 		gbc_btnStart.gridx = 0;
 		gbc_btnStart.gridy = 0;
 		contentPane.add(btnStart, gbc_btnStart);
 		
+		scrollPane = new JScrollPane();
+		GridBagConstraints gbc_scrollPane = new GridBagConstraints();
+		gbc_scrollPane.fill = GridBagConstraints.BOTH;
+		gbc_scrollPane.gridx = 0;
+		gbc_scrollPane.gridy = 1;
+		contentPane.add(scrollPane, gbc_scrollPane);
+		
 		table = new JTable();
-		GridBagConstraints gbc_table = new GridBagConstraints();
-		gbc_table.fill = GridBagConstraints.BOTH;
-		gbc_table.gridx = 0;
-		gbc_table.gridy = 1;
-		contentPane.add(table, gbc_table);
+		scrollPane.setViewportView(table);
 	}
 
 }

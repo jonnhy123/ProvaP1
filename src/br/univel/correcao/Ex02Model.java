@@ -5,7 +5,7 @@ import javax.swing.table.AbstractTableModel;
 public class Ex02Model extends AbstractTableModel {
 
 	private static final long serialVersionUID = 1L;
-	private int d1 = 1, d2 = 2, d3 = 3, d4 = 4, d5 = 5, d6 = 6;
+	private int d1 = 1, d2 = 4, d3 = 8, d4 = 3, d5 = 1, d6 = 5;
 	
 //Assunto: correção prova 3o semestre	
 	
